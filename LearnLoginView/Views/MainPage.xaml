@@ -25,6 +25,18 @@
             Background="{ThemeResource SystemControlPageBackgroundChromeLowBrush}">
             <!--The SystemControlPageBackgroundChromeLowBrush background represents where you should place your content. 
                 Place your content here.-->
+            <StackPanel>
+                <TextBox Text="{x:Bind ViewModel.User.Name, Mode=TwoWay}" Header="Name"/>
+                <TextBlock Text="{Binding User.Errors[Name][0]}" Style="{ThemeResource ErrorMessageStyle}"/>
+                <TextBox Text="{x:Bind ViewModel.User.Age, Mode=TwoWay}" Header="Age" InputScope="Number"/>
+                <TextBlock Text="{Binding User.Errors[Age][0]}" Style="{ThemeResource ErrorMessageStyle}"/>
+                <TextBox Text="{x:Bind ViewModel.User.Mail, Mode=TwoWay}" Header="Mail"/>
+                <TextBlock Text="{Binding User.Errors[Mail][0]}" Style="{ThemeResource ErrorMessageStyle}"/>
+                <PasswordBox Password="{x:Bind ViewModel.User.Password, Mode=TwoWay}" Header="Password"/>
+                <TextBlock Text="{Binding User.Errors[Password][0]}" Style="{ThemeResource ErrorMessageStyle}"/>
+                
+                <Button Content="Submit" Margin="0,10,0,0"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>
